@@ -14,5 +14,3 @@ export default {
     components: { SelectorComponent, FooterComponent },
 };
 </script>
-
-<style scoped></style>

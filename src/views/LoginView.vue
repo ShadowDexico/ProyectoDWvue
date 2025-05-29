@@ -17,14 +17,40 @@ export default {
 
 <style scoped>
 .login-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-top: 100px;
+    background-color: #121212;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
 button {
-    padding: 10px 20px;
-    font-size: 16px;
+    width: 500px;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background: #007bff;
+    color: black;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+button:hover {
+    background: #16b6bf;
+    transform: scale(1.02);
 }
 </style>

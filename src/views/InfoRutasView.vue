@@ -13,7 +13,6 @@
             </div>
         </div>
 
-        <router-link to="/" class="lol">Volver</router-link>
     </div>
 </template>
 
@@ -32,17 +31,12 @@ export default {
             this.rutaSeleccionada = this.rutaSeleccionada === clave ? null : clave;
         },
         async cargarRutas() {
-            const maxRutas = 10;
-            const nuevasRutas = {};
-            for (let id = 1; id <= maxRutas; id++) {
-                try {
-                    const res = await axios.get(`http://localhost:8081/api/rutas/${id}`);
-                    nuevasRutas[id] = res.data;
-                } catch (err) {
-                    console.warn(`Ruta ${id} no encontrada o error en la API`, err);
-                }
+            try {
+                const res = await axios.get('http://localhost:8081/api/rutas');
+                this.rutas = res.data;
+            } catch (err) {
+                console.warn('Error al cargar rutas desde la API', err);
             }
-            this.rutas = nuevasRutas;
         },
     },
     mounted() {
@@ -105,22 +99,5 @@ div {
     max-height: 1500px;
     opacity: 1;
     padding: 10px;
-}
-
-.lol {
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: rgba(255, 255, 255, 0.2);
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-    margin-top: 20px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.lol:hover {
-    background-color: #151010;
-    transform: scale(1.05);
 }
 </style>

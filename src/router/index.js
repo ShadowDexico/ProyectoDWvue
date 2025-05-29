@@ -3,6 +3,7 @@ import RutasVue from "@/views/RutasVue.vue";
 import InfoRutasView from "@/views/InfoRutasView.vue";
 import LoginView from "@/views/LoginView.vue";
 import OAuthRedirect from "@/views/OAuthRedirect.vue";
+import InfoAppView from "@/views/InfoAppView.vue";
 
 const routes = [
   {
@@ -26,6 +27,11 @@ const routes = [
     path: "/info",
     name: "inforutas",
     component: InfoRutasView,
+  },
+  {
+    path: "/infoApp",
+    name: "Informacion",
+    component: InfoAppView,
   },
 ];
 

@@ -12,7 +12,7 @@
         <div class="imagen">
           <img :src="rutaInfo.imagen" :alt="rutaInfo.texto" />
         </div>
-        <RouterLink to="/rutas/info" class="lol">Todas las rutas</RouterLink>
+        <button class="lol" @click="irARutas">Todas las rutas</button>
       </div>
     </div>
   </div>
@@ -77,6 +77,10 @@ export default {
     cerrarModal() {
       this.$emit("cerrar");
     },
+    irARutas() {
+      this.$emit("cerrar");
+      this.$router.push("/info");
+    },
   },
 };
 </script>
@@ -112,6 +116,7 @@ export default {
     opacity: 0;
     transform: translateY(-50px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -164,5 +169,25 @@ export default {
   height: 450px;
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.lol {
+  display: inline-block;
+  width: 100%;
+  max-width: 250px;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  background: #007bff;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.lol:hover {
+  background: #16b6bf;
+  transform: scale(1.05);
 }
 </style>

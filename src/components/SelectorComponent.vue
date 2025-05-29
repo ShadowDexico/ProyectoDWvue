@@ -1,5 +1,5 @@
 <template>
-  <body>
+  <div class="container-dad">
     <div class="container">
       <h2>Control de Rutas - Santa Marta</h2>
       <label>Seleccione su ubicación:</label>
@@ -25,7 +25,7 @@
       <button @click="calcularRuta">Calcular Ruta</button>
       <ResultadoComponent :rutaInfo="rutaSeleccionada" />
     </div>
-  </body>
+  </div>
 </template>
 
 <script>
@@ -104,8 +104,9 @@ export default {
 };
 </script>
 
+
 <style scoped>
-body {
+.container-dad {
   background-color: #121212;
   color: white;
   font-family: Arial, sans-serif;
@@ -114,17 +115,37 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh;
-  margin: 0px -8px;
+  min-height: calc(90vh - 40px);
+
+  margin: 0;
+
+  width: 100%;
+
+  box-sizing: border-box;
 }
 
 .container {
   max-width: 600px;
-  margin: auto;
+  width: 90%;
+
   background: #1e1e1e;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+  box-sizing: border-box;
+
+}
+
+label {
+  display: block;
+
+  margin-top: 15px;
+
+  margin-bottom: 5px;
+  text-align: left;
+
+  padding-left: 5px;
+
 }
 
 select,
@@ -134,15 +155,77 @@ button {
   margin: 10px 0;
   border: none;
   border-radius: 5px;
+  box-sizing: border-box;
+
+  font-size: 1em;
 }
 
 button {
   background: #007bff;
   color: black;
   cursor: pointer;
+
 }
 
 button:hover {
   background: #16b6bf;
+}
+
+.resultado-component-spacing {
+  margin-top: 20px;
+
+}
+
+@media (max-width: 768px) {
+  .container-dad {
+    padding: 15px;
+    min-height: auto;
+  }
+
+  .container {
+    width: 95%;
+
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 1.5em;
+
+  }
+
+  select,
+  button {
+    font-size: 0.95em;
+
+  }
+}
+
+@media (max-width: 480px) {
+  .container-dad {
+    padding: 10px;
+  }
+
+  .container {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+
+  }
+
+  h2 {
+    font-size: 1.3em;
+  }
+
+  label {
+    font-size: 0.9em;
+    text-align: center;
+  }
+
+  select,
+  button {
+    padding: 8px;
+    margin: 8px 0;
+    font-size: 0.9em;
+  }
 }
 </style>

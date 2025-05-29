@@ -1,7 +1,7 @@
 <template>
     <div>
-        <SelectorComponent/>
-        <FooterComponent/>
+        <SelectorComponent />
+        <FooterComponent />
     </div>
 </template>
 

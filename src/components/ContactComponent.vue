@@ -36,17 +36,19 @@ export default {
   },
 };
 </script>
-
 <style scoped>
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css");
-
 .contact-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+
   min-height: 90vh;
+
   background: #121212;
-  padding: 20px;
+  padding: 40px 20px;
+
+  box-sizing: border-box;
+
 }
 
 .contact-card {
@@ -58,11 +60,14 @@ export default {
   text-align: center;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
   color: white;
+  box-sizing: border-box;
+  /* Include padding in width */
 }
 
 .contact-card h2 {
-  margin-bottom: 20px;
-  font-size: 28px;
+  margin-bottom: 25px;
+  font-size: 2em;
+
   color: #00bcd4;
 }
 
@@ -70,22 +75,25 @@ export default {
 .form textarea {
   width: 100%;
   margin: 10px 0;
-  padding: 12px;
+  padding: 14px;
   border-radius: 8px;
   border: none;
   background: #2c2c2c;
   color: white;
-  font-size: 14px;
+  font-size: 1em;
+  box-sizing: border-box;
 }
 
 .form textarea {
-  height: 100px;
-  resize: none;
+  height: 120px;
+  resize: vertical;
 }
 
 .form button {
-  margin-top: 15px;
-  padding: 12px;
+  margin-top: 20px;
+
+  padding: 14px;
+
   width: 100%;
   background-color: #00bcd4;
   color: white;
@@ -94,6 +102,8 @@ export default {
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
+  font-size: 1.1em;
+
 }
 
 .form button:hover {
@@ -101,23 +111,124 @@ export default {
 }
 
 .social-media {
-  margin-top: 30px;
+  margin-top: 40px;
+
+}
+
+.social-media p {
+  font-size: 1.1em;
+
+  margin-bottom: 15px;
 }
 
 .social-media .icons {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 25px;
+
   margin-top: 10px;
 }
 
 .social-media i {
-  font-size: 24px;
+  font-size: 28px;
   color: white;
   transition: 0.3s;
 }
 
 .social-media a:hover i {
   color: #00bcd4;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 30px 15px;
+  }
+
+  .contact-card {
+    padding: 25px 30px;
+    max-width: 450px;
+  }
+
+  .contact-card h2 {
+    font-size: 1.8em;
+  }
+
+  .form input,
+  .form textarea {
+    padding: 12px;
+    font-size: 0.95em;
+  }
+
+  .form textarea {
+    height: 100px;
+  }
+
+  .form button {
+    padding: 12px;
+    font-size: 1em;
+  }
+
+  .social-media p {
+    font-size: 1em;
+  }
+
+  .social-media .icons {
+    gap: 20px;
+  }
+
+  .social-media i {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-container {
+    padding: 20px 10px;
+    min-height: 80vh;
+  }
+
+  .contact-card {
+    padding: 20px 20px;
+    width: 95%;
+  }
+
+  .contact-card h2 {
+    font-size: 1.6em;
+    margin-bottom: 20px;
+  }
+
+  .form input,
+  .form textarea {
+    padding: 10px;
+    font-size: 0.9em;
+    margin: 8px 0;
+  }
+
+  .form textarea {
+    height: 80px;
+  }
+
+  .form button {
+    padding: 10px;
+    font-size: 0.95em;
+    margin-top: 15px;
+  }
+
+  .social-media {
+    margin-top: 30px;
+  }
+
+  .social-media p {
+    font-size: 0.95em;
+    margin-bottom: 10px;
+  }
+
+  .social-media .icons {
+    gap: 15px;
+  }
+
+  .social-media i {
+    font-size: 24px;
+  }
 }
 </style>

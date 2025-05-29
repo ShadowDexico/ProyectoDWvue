@@ -48,9 +48,9 @@ nav {
   left: 0;
   width: 100%;
   background-color: #1e1e1e;
-  padding: 20px 0;
+  padding: 15px 0;
   text-align: center;
-  z-index: 999;
+  z-index: 998;
 }
 
 nav a {
@@ -58,7 +58,7 @@ nav a {
   text-decoration: none;
   margin: 0 20px;
   font-size: 18px;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
   font-weight: bold;
 }
 
@@ -79,5 +79,33 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
+}
+
+@media (max-width: 768px) {
+  nav {
+    position: fixed;
+    top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  nav a {
+    display: block;
+    margin: 8px 0;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1025px) {
+  nav {
+    display: flex;
+    justify-content: center;
+  }
+
+  nav a {
+    font-size: 20px;
+  }
 }
 </style>

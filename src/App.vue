@@ -1,11 +1,23 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> 
-    <!-- <router-link to="/s">Home</router-link>  -->
-    <!-- <router-link to="/rutas">Rutas</router-link> -->
+    <router-link to="/rutass">Home</router-link>
   </nav>
-  <router-view/>
+  <router-view />
 </template>
+
+<script>
+export default {
+  mounted() {
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get("token");
+
+    if (token) {
+      localStorage.setItem("token", token);
+      this.$router.replace({ path: "/rutass" });
+    }
+  },
+};
+</script>
 
 <style>
 #app {

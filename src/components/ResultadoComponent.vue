@@ -30,7 +30,6 @@
       <button @click="abrirModal(rutaInfo.idRuta)" class="lol">Más Información</button>
     </div>
     
-    <!-- Modal para mostrar información detallada -->
     <ModalInfoRuta 
       :show="mostrarModal" 
       :rutaId="rutaIdSeleccionada"
@@ -64,9 +63,8 @@ export default {
   },
   methods: {
     formatearClave(clave) {
-      // Verificar que clave sea una cadena de texto
       if (typeof clave !== 'string') {
-        return String(clave); // Convertir a string si no lo es
+        return String(clave); 
       }
       return clave
         .replace(/([A-Z])/g, " $1")
